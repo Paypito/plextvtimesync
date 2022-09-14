@@ -1,0 +1,13 @@
+{
+  "tvtime": {
+    "token": {
+      "symfony": "",
+      "tvstRemember": ""
+    }
+  },
+  "plex": {
+    "baseUrl": "",
+    "token": ""
+  },
+  "timer": 20
+}
