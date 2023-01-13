@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    plextvtimesync:
+        build: .
+        environment:
+            - TVTIME_SYMFONY=YOUR_KEY
+            - TVTIME_TVST_REMEMBER=YOUR_KEY
+            - 'PLEX_BASE_URL=http://YOUR_BASE_URL'
+            - PLEX_TOKEN=YOUR_TOKEN
+            - JOB_TIMER=20
