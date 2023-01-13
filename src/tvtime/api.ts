@@ -1,4 +1,4 @@
-import Config from '../../config.json';
+import {config} from "../config";
 import axios from 'axios';
 import { load } from 'cheerio';
 import TvTimeSearch from './models/search';
@@ -104,7 +104,7 @@ export default class TvTimeApi {
       let result = await axios.put(url, {}, {
         headers: {
           Host: "www.tvtime.com",
-          Cookie: `symfony=${Config.tvtime.token.symfony}; tvstRemember=${Config.tvtime.token.tvstRemember}`
+          Cookie: `symfony=${config.tvtime.token.symfony}; tvstRemember=${config.tvtime.token.tvstRemember}`
         }
       }
       );

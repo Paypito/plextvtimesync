@@ -1,4 +1,4 @@
-import Config from '../../config.json';
+import {config} from "../config";
 import axios from 'axios';
 import PlexHistory from './models/history';
 
@@ -13,7 +13,7 @@ export default class PlexApi {
    */
   static getLibaryHistory = async (plexToken: string, sort?: string, viewedAt?: number, accountId?: number): Promise<PlexHistory[]> => {
     try {
-      let url = Config.plex.baseUrl + `/status/sessions/history/all?X-Plex-Token=${plexToken}&sort=${sort}&viewedAt>=${viewedAt}&accountID=${accountId}`;
+      let url = config.plex.baseUrl + `/status/sessions/history/all?X-Plex-Token=${plexToken}&sort=${sort}&viewedAt>=${viewedAt}&accountID=${accountId}`;
       let result = await axios.get(url);
       const history: PlexHistory[] = [];
       result.data.MediaContainer.Metadata.filter((item: any) => item?.type == "episode").map((item: any) =>
